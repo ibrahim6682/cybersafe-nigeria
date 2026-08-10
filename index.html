@@ -1,116 +1,454 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CyberSafe Nigeria | Cybersecurity Awareness</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;line-height:1.6;color:#172033;background:#f5f7fb}
-header{background:#102a43;color:white;padding:48px 20px;text-align:center}
-header h1{margin:0 0 10px;font-size:34px}
-header p{margin:0 auto;max-width:720px;font-size:18px}
-nav{background:#0b1f33;padding:12px;text-align:center;position:sticky;top:0}
-nav a{color:white;text-decoration:none;margin:0 10px;font-weight:bold}
-.container{max-width:1050px;margin:auto;padding:25px 18px}
-.hero{background:white;padding:28px;border-radius:14px;margin-top:25px;box-shadow:0 3px 12px #0001}
-h2{color:#102a43}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
-.card{background:white;padding:22px;border-radius:14px;box-shadow:0 3px 12px #0001}
-.card h3{margin-top:0;color:#0b5cad}
-.tip{border-left:5px solid #0b5cad;background:#eef6ff;padding:15px;margin:12px 0}
-.warning{border-left:5px solid #c0392b;background:#fff1ef;padding:15px;margin:12px 0}
-button{background:#0b5cad;color:white;border:0;border-radius:8px;padding:12px 18px;font-weight:bold}
-footer{background:#102a43;color:white;text-align:center;padding:25px;margin-top:30px}
-.small{font-size:14px;color:#53657a}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CyberSafe Nigeria</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0b1f3a;
+      color: white;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 18px;
+      color: #dbeafe;
+    }
+
+    nav {
+      background: #12345b;
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    .hero {
+      background: white;
+      padding: 35px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .hero h2 {
+      color: #0b1f3a;
+      margin-bottom: 15px;
+      font-size: 28px;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #0b1f3a;
+      margin: 35px 0 20px;
+      font-size: 28px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border-top: 5px solid #2563eb;
+    }
+
+    .card h3 {
+      color: #12345b;
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .icon {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .protection {
+      background: #eaf3ff;
+      padding: 30px;
+      border-radius: 15px;
+      margin-top: 30px;
+    }
+
+    .protection h2 {
+      color: #0b1f3a;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      padding-left: 25px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .warning {
+      background: #fff7ed;
+      border-left: 6px solid #f97316;
+      padding: 25px;
+      margin-top: 30px;
+      border-radius: 10px;
+    }
+
+    .warning h2 {
+      color: #c2410c;
+      margin-bottom: 12px;
+    }
+
+    .checklist {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      margin-top: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .checklist label {
+      display: block;
+      margin: 13px 0;
+      font-size: 17px;
+    }
+
+    .checklist input {
+      margin-right: 10px;
+      transform: scale(1.2);
+    }
+
+    .attack {
+      background: #fef2f2;
+      border-left: 6px solid #dc2626;
+      padding: 25px;
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+
+    .attack h2 {
+      color: #b91c1c;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background: #0b1f3a;
+      color: white;
+      text-align: center;
+      padding: 30px 15px;
+      margin-top: 50px;
+    }
+
+    footer p {
+      margin: 6px 0;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 30px;
+      }
+
+      header p {
+        font-size: 16px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 7px;
+        font-size: 14px;
+      }
+
+      .hero,
+      .protection,
+      .checklist {
+        padding: 22px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-<h1>CyberSafe Nigeria</h1>
-<p>Cybersecurity Awareness and Best Practices for Small Businesses and Everyday Internet Users</p>
-</header>
+  <header>
+    <h1>🛡️ CyberSafe Nigeria</h1>
+    <p>Cybersecurity Awareness and Best Practices</p>
+    <span class="badge">3MTT NextGen Capstone Project</span>
+  </header>
 
-<nav>
-<a href="#threats">Threats</a>
-<a href="#protect">Protection</a>
-<a href="#phishing">Phishing</a>
-<a href="#checklist">Checklist</a>
-</nav>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#threats">Threats</a>
+    <a href="#protection">Protection</a>
+    <a href="#phishing">Phishing</a>
+    <a href="#checklist">Checklist</a>
+  </nav>
 
-<main class="container">
-<section class="hero">
-<h2>About This Project</h2>
-<p>
-This project provides simple and practical cybersecurity guidance for small businesses,
-students and everyday internet users. It focuses on common threats and actions people
-can take to protect accounts, devices and important information.
-</p>
-<p><strong>Project focus:</strong> Cybersecurity awareness, prevention and safe digital practices.</p>
-</section>
+  <main class="container">
 
-<section id="threats">
-<h2>Common Cybersecurity Threats</h2>
-<div class="grid">
-<div class="card"><h3>🎣 Phishing</h3><p>Fake emails, SMS or social-media messages designed to steal passwords, money or personal information.</p></div>
-<div class="card"><h3>🦠 Malware</h3><p>Malicious software that can damage devices, spy on users or steal information.</p></div>
-<div class="card"><h3>🔑 Weak Passwords</h3><p>Short, reused or predictable passwords make accounts easier to compromise.</p></div>
-<div class="card"><h3>📱 Social Engineering</h3><p>Attackers manipulate people into revealing information or performing unsafe actions.</p></div>
-</div>
-</section>
+    <section id="about" class="hero">
+      <h2>About This Project</h2>
 
-<section id="protect">
-<h2>How to Protect Yourself</h2>
-<div class="grid">
-<div class="card"><h3>Use Strong Passwords</h3><p>Use long, unique passwords for important accounts. Avoid reusing the same password everywhere.</p></div>
-<div class="card"><h3>Enable 2FA/MFA</h3><p>Turn on two-factor or multi-factor authentication whenever the service supports it.</p></div>
-<div class="card"><h3>Update Devices</h3><p>Install security updates for your phone, computer, browser and applications.</p></div>
-<div class="card"><h3>Back Up Important Data</h3><p>Keep safe copies of important documents and business information so they can be recovered after an incident.</p></div>
-</div>
-</section>
+      <p>
+        This project provides simple and practical cybersecurity guidance
+        for small businesses, students and everyday internet users.
+        It focuses on common threats and actions people can take to protect
+        accounts, devices and important information.
+      </p>
 
-<section id="phishing">
-<h2>How to Spot a Phishing Message</h2>
-<div class="warning"><strong>Be careful if a message:</strong><br>
-• Creates urgent pressure: “Act now!”<br>
-• Requests your password, PIN or OTP<br>
-• Contains a suspicious link<br>
-• Offers an unrealistic prize or financial opportunity<br>
-• Comes from an address or account you do not recognize
-</div>
-<div class="tip"><strong>Safety rule:</strong> Do not click first. Verify the sender and the website through an official channel before taking action.</div>
-</section>
+      <br>
 
-<section id="checklist">
-<h2>Quick Security Checklist</h2>
-<div class="card">
-<label><input type="checkbox"> I use strong and unique passwords.</label><br>
-<label><input type="checkbox"> I have enabled 2FA/MFA on important accounts.</label><br>
-<label><input type="checkbox"> I update my phone and applications.</label><br>
-<label><input type="checkbox"> I avoid suspicious links and attachments.</label><br>
-<label><input type="checkbox"> I back up important files.</label><br>
-<label><input type="checkbox"> I never share my OTP, PIN or password with others.</label>
-</div>
-</section>
+      <p>
+        <strong>Project Focus:</strong>
+        Cybersecurity awareness, prevention and safe digital practices.
+      </p>
+    </section>
 
-<section class="hero">
-<h2>What To Do If You Suspect an Attack</h2>
-<ol>
-<li>Stop interacting with the suspicious message or website.</li>
-<li>Change the affected password from a trusted device.</li>
-<li>Enable 2FA/MFA if it is not already enabled.</li>
-<li>Review account activity and sign out unknown sessions.</li>
-<li>Inform the relevant service provider or organization.</li>
-<li>If money or sensitive information was involved, report the incident promptly to the appropriate authorities or institution.</li>
-</ol>
-</section>
-</main>
 
-<footer>
-<p><strong>3MTT NextGen Capstone Project</strong></p>
-<p>Cybersecurity Awareness and Best Practices</p>
-<p class="small">Educational project created to promote safer digital practices.</p>
-</footer>
+    <h2 id="threats" class="section-title">
+      Common Cybersecurity Threats
+    </h2>
+
+    <section class="cards">
+
+      <div class="card">
+        <div class="icon">🎣</div>
+        <h3>Phishing</h3>
+        <p>
+          Fake emails, SMS or social-media messages designed to steal
+          passwords, money or personal information.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🦠</div>
+        <h3>Malware</h3>
+        <p>
+          Malicious software that can damage devices, spy on users
+          or steal information.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🔑</div>
+        <h3>Weak Passwords</h3>
+        <p>
+          Short, reused or predictable passwords make accounts
+          easier to compromise.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">📱</div>
+        <h3>Social Engineering</h3>
+        <p>
+          Attackers manipulate people into revealing information
+          or performing unsafe actions.
+        </p>
+      </div>
+
+    </section>
+
+
+    <section id="protection" class="protection">
+
+      <h2>How to Protect Yourself</h2>
+
+      <ul>
+        <li>
+          <strong>Use Strong Passwords:</strong>
+          Use long, unique passwords for important accounts.
+          Avoid reusing the same password everywhere.
+        </li>
+
+        <li>
+          <strong>Enable 2FA/MFA:</strong>
+          Turn on two-factor or multi-factor authentication
+          whenever the service supports it.
+        </li>
+
+        <li>
+          <strong>Update Devices:</strong>
+          Install security updates for your phone, computer,
+          browser and applications.
+        </li>
+
+        <li>
+          <strong>Back Up Important Data:</strong>
+          Keep safe copies of important documents and business
+          information so they can be recovered after an incident.
+        </li>
+      </ul>
+
+    </section>
+
+
+    <section id="phishing" class="warning">
+
+      <h2>🎣 How to Spot a Phishing Message</h2>
+
+      <p>Be careful if a message:</p>
+
+      <ul>
+        <li>Creates urgent pressure: <strong>"Act now!"</strong></li>
+        <li>Requests your password, PIN or OTP.</li>
+        <li>Contains a suspicious link.</li>
+        <li>Offers an unrealistic prize or financial opportunity.</li>
+        <li>Comes from an address or account you do not recognize.</li>
+      </ul>
+
+      <br>
+
+      <p>
+        <strong>Safety Rule:</strong>
+        Do not click first. Verify the sender and the website
+        through an official channel before taking action.
+      </p>
+
+    </section>
+
+
+    <section id="checklist" class="checklist">
+
+      <h2>✅ Quick Security Checklist</h2>
+
+      <label>
+        <input type="checkbox">
+        I use strong and unique passwords.
+      </label>
+
+      <label>
+        <input type="checkbox">
+        I have enabled 2FA/MFA on important accounts.
+      </label>
+
+      <label>
+        <input type="checkbox">
+        I update my phone and applications.
+      </label>
+
+      <label>
+        <input type="checkbox">
+        I avoid suspicious links and attachments.
+      </label>
+
+      <label>
+        <input type="checkbox">
+        I back up important files.
+      </label>
+
+      <label>
+        <input type="checkbox">
+        I never share my OTP, PIN or password with others.
+      </label>
+
+    </section>
+
+
+    <section class="attack">
+
+      <h2>🚨 What To Do If You Suspect an Attack</h2>
+
+      <ul>
+        <li>Stop interacting with the suspicious message or website.</li>
+
+        <li>
+          Change the affected password from a trusted device.
+        </li>
+
+        <li>
+          Enable 2FA/MFA if it is not already enabled.
+        </li>
+
+        <li>
+          Review account activity and sign out unknown sessions.
+        </li>
+
+        <li>
+          Inform the relevant service provider or organization.
+        </li>
+
+        <li>
+          If money or sensitive information was involved,
+          report the incident promptly to the appropriate authorities
+          or institution.
+        </li>
+      </ul>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <p><strong>CyberSafe Nigeria</strong></p>
+
+    <p>
+      Cybersecurity Awareness and Best Practices
+    </p>
+
+    <p>
+      Educational project created to promote safer digital practices.
+    </p>
+
+    <p>
+      © 2026 3MTT NextGen Capstone Project
+    </p>
+
+  </footer>
+
 </body>
 </html>
